@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://mybrandpackage.on.spiceworks.com/portal/ticket/25 -->
+<html class="portal" style="--vh: 8.94px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="origin-trial" content="A7vZI3v+Gz7JfuRolKNM4Aff6zaGuT7X0mf3wtoZTnKv6497cVMnhy03KDqX7kBz/q/iidW7srW31oQbBt4VhgoAAACUeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGUuY29tOjQ0MyIsImZlYXR1cmUiOiJEaXNhYmxlVGhpcmRQYXJ0eVN0b3JhZ2VQYXJ0aXRpb25pbmczIiwiZXhwaXJ5IjoxNzU3OTgwODAwLCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlfQ==">
+    <title>Project Tracking Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="https://edge.spiceworksstatic.com/service.tron/assets/favicon-845dec177fcd19cebf907924a1da01792dae2115fe1181fb96a6c94e260d338e.ico">
+
+    <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="pmTilOEWQ7n_DgXspqB1Y32yNfgtdZhRLmM4vqywVWP1CxntgyTvMmje1v0nA4HRHR8_zx3v9aLzrijhQstWQw">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="revision" content="afac7957">
+    <!-- TODO: Remove once pages have been re-indexed and robots.txt file is added back -->
+    <meta name="robots" content="noindex">
+
+    <!-- Data Layer -->
+<script type="text/javascript" async="" charset="utf-8" src="./25_files/recaptcha__en.js.download" crossorigin="anonymous" integrity="sha384-Pgzxh1AwnkDgbWKtYDFLE/r3ApPn/Q8WuDIGgofHUvDRypiXM2Mes4UTV5JTaDp+"></script><script async="" src="./25_files/analytics.js.download"></script><script async="" src="./25_files/gtm.js.download"></script><script async="" src="./25_files/gtm(1).js.download"></script><script>
+  var userId = '';
+  var chdUserId = '';
+  var accountId = '';
+  var currentEndUserId = '26349320';
+  var currentEndUserOrganizationId = '1157951';
+  var currentEndUserPortalAuthType = '2';
+
+  function getPortalAuthType() {
+    const currentPath = window.location.pathname;
+
+    if (currentPath.startsWith('/portal')) {
+      if (currentPath.includes('/portal/registrations')) {
+        return '2'; // email authentication
+      }
+      if (!currentEndUserId) {
+        return '1'; // guest mode (no authentication)
+      }
+
+      // will be either 2 for email authentication or 3 for active directory authentication
+      return currentEndUserPortalAuthType;
+    }
+    // We're not in the Portal app
+    else {
+      return '';
+    }
+  }
+
+  function initializeDataLayer() {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'user_id': userId,
+      'chd_user_id': chdUserId,
+      'account_id': accountId,
+      'chd_end_user_id': currentEndUserId,
+      'chd_end_user_portal_auth_type': getPortalAuthType(),
+      'chd_end_user_organization_id': currentEndUserOrganizationId,
+    });
+  }
+
+  initializeDataLayer();
+</script>
+<!-- End Data Layer -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KTKRL68F');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KKTNBB');</script>
+<!-- End Google Tag Manager -->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-314222-33', 'auto', {'allowLinker': true});
+  // current_user is undefined for the portal and will not send pageviews.
+  // Ember and Vue use a different method for sending GA stats. Check out stats.js
+</script>
+
+
+    <script src="./25_files/api.js.download" async="" defer=""></script>
+    <link href="./25_files/css2" rel="stylesheet">
+    <link href="./25_files/materialdesignicons.min.css" rel="stylesheet">
+
+      <link rel="stylesheet" href="./25_files/common-0c72d0a5.css">
+  <link rel="stylesheet" href="./25_files/tailwind-59200087.css">
+  <link rel="stylesheet" href="./25_files/vuetify-ffa33aa5.css">
+  <script src="./25_files/portal-0ce7c72d.js.download" crossorigin="anonymous" type="module"></script><link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/vuetify-a54d7e62.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/index-ec06e4d1.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/PortalLayout-45839c66.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/ServiceRestrictionIllustration-157ed40f.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/service-mixins-d1b95a8a.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/TicketEntry-82c99ab7.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/snackbar-store-09a12cd9.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/purify.es-48fd10f6.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/date-helpers-c645abed.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/VDatePicker-a9f94075.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/SpiceworksButton-9aecd653.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/VForm-d7fecbe6.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/FullFooter-b8e9b5b2.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/VContainer-adb714d9.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/VMain-64ef65e5.js" as="script" crossorigin="anonymous">
+<link rel="modulepreload" href="https://edge.spiceworksstatic.com/service.tron/vite/assets/app-config-store-3dc0ddd6.js" as="script" crossorigin="anonymous"><link rel="stylesheet" href="./25_files/portal-3ce2a140.css" media="screen">
+<link rel="stylesheet" href="./25_files/vuetify-8109b65e.css" media="screen">
+<link rel="stylesheet" href="./25_files/index-58f30f37.css" media="screen">
+<link rel="stylesheet" href="./25_files/PortalLayout-3f56741a.css" media="screen">
+<link rel="stylesheet" href="./25_files/ServiceRestrictionIllustration-4e045307.css" media="screen">
+<link rel="stylesheet" href="./25_files/TicketEntry-f5c7110d.css" media="screen">
+<link rel="stylesheet" href="./25_files/snackbar-store-f1ba0369.css" media="screen">
+<link rel="stylesheet" href="./25_files/purify-7d19a9ef.css" media="screen">
+<link rel="stylesheet" href="./25_files/date-helpers-f9550d51.css" media="screen">
+<link rel="stylesheet" href="./25_files/VDatePicker-41e7dee4.css" media="screen">
+<link rel="stylesheet" href="./25_files/SpiceworksButton-fb6b96b5.css" media="screen">
+<link rel="stylesheet" href="./25_files/VMain-d6216866.css" media="screen">
+
+  <style type="text/css" id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 118,121,122;
+      --v-theme-surface-variant-overlay-multiplier: 1;
+      --v-theme-on-surface-variant: 242,243,244;
+      --v-theme-primary: 0,127,162;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 229,30,23;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 0,139,195;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 0,136,65;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 255,209,47;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-brand: 238,113,35;
+      --v-theme-brand-overlay-multiplier: 1;
+      --v-theme-default-btn-color: 67,70,72;
+      --v-theme-default-btn-color-overlay-multiplier: 2;
+      --v-theme-medium-priority: 245,130,32;
+      --v-theme-medium-priority-overlay-multiplier: 1;
+      --v-theme-info-500: 74,74,74;
+      --v-theme-info-500-overlay-multiplier: 2;
+      --v-theme-success-500: 45,185,96;
+      --v-theme-success-500-overlay-multiplier: 1;
+      --v-theme-selected-table-header: 8,8,9;
+      --v-theme-selected-table-header-overlay-multiplier: 2;
+      --v-theme-internal-note-bg: 255,242,206;
+      --v-theme-internal-note-bg-overlay-multiplier: 1;
+      --v-theme-comment-bg: 242,243,244;
+      --v-theme-comment-bg-overlay-multiplier: 1;
+      --v-theme-earl-200: 220,221,222;
+      --v-theme-earl-200-overlay-multiplier: 1;
+      --v-theme-earl-300: 186,188,189;
+      --v-theme-earl-300-overlay-multiplier: 1;
+      --v-theme-earl-500: 118,121,122;
+      --v-theme-earl-500-overlay-multiplier: 1;
+      --v-theme-earl-600: 84,88,90;
+      --v-theme-earl-600-overlay-multiplier: 2;
+      --v-theme-earl-700: 67,70,72;
+      --v-theme-earl-700-overlay-multiplier: 2;
+      --v-theme-earl-900: 33,35,36;
+      --v-theme-earl-900-overlay-multiplier: 2;
+      --v-theme-earl-1000: 8,8,9;
+      --v-theme-earl-1000-overlay-multiplier: 2;
+      --v-theme-amaizeing-100: 255,242,206;
+      --v-theme-amaizeing-100-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-brand: 255,255,255;
+      --v-theme-on-default-btn-color: 255,255,255;
+      --v-theme-on-medium-priority: 255,255,255;
+      --v-theme-on-info-500: 255,255,255;
+      --v-theme-on-success-500: 255,255,255;
+      --v-theme-on-selected-table-header: 255,255,255;
+      --v-theme-on-internal-note-bg: 0,0,0;
+      --v-theme-on-comment-bg: 0,0,0;
+      --v-theme-on-earl-200: 0,0,0;
+      --v-theme-on-earl-300: 0,0,0;
+      --v-theme-on-earl-500: 255,255,255;
+      --v-theme-on-earl-600: 255,255,255;
+      --v-theme-on-earl-700: 255,255,255;
+      --v-theme-on-earl-900: 255,255,255;
+      --v-theme-on-earl-1000: 255,255,255;
+      --v-theme-on-amaizeing-100: 0,0,0;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 163,163,163;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 66,66,66;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .v-theme--lightTheme {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 118,121,122;
+      --v-theme-surface-variant-overlay-multiplier: 1;
+      --v-theme-on-surface-variant: 242,243,244;
+      --v-theme-primary: 0,127,162;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 229,30,23;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 0,139,195;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 0,136,65;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 255,209,47;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-brand: 238,113,35;
+      --v-theme-brand-overlay-multiplier: 1;
+      --v-theme-default-btn-color: 67,70,72;
+      --v-theme-default-btn-color-overlay-multiplier: 2;
+      --v-theme-medium-priority: 245,130,32;
+      --v-theme-medium-priority-overlay-multiplier: 1;
+      --v-theme-info-500: 74,74,74;
+      --v-theme-info-500-overlay-multiplier: 2;
+      --v-theme-success-500: 45,185,96;
+      --v-theme-success-500-overlay-multiplier: 1;
+      --v-theme-selected-table-header: 8,8,9;
+      --v-theme-selected-table-header-overlay-multiplier: 2;
+      --v-theme-internal-note-bg: 255,242,206;
+      --v-theme-internal-note-bg-overlay-multiplier: 1;
+      --v-theme-comment-bg: 242,243,244;
+      --v-theme-comment-bg-overlay-multiplier: 1;
+      --v-theme-earl-200: 220,221,222;
+      --v-theme-earl-200-overlay-multiplier: 1;
+      --v-theme-earl-300: 186,188,189;
+      --v-theme-earl-300-overlay-multiplier: 1;
+      --v-theme-earl-500: 118,121,122;
+      --v-theme-earl-500-overlay-multiplier: 1;
+      --v-theme-earl-600: 84,88,90;
+      --v-theme-earl-600-overlay-multiplier: 2;
+      --v-theme-earl-700: 67,70,72;
+      --v-theme-earl-700-overlay-multiplier: 2;
+      --v-theme-earl-900: 33,35,36;
+      --v-theme-earl-900-overlay-multiplier: 2;
+      --v-theme-earl-1000: 8,8,9;
+      --v-theme-earl-1000-overlay-multiplier: 2;
+      --v-theme-amaizeing-100: 255,242,206;
+      --v-theme-amaizeing-100-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-brand: 255,255,255;
+      --v-theme-on-default-btn-color: 255,255,255;
+      --v-theme-on-medium-priority: 255,255,255;
+      --v-theme-on-info-500: 255,255,255;
+      --v-theme-on-success-500: 255,255,255;
+      --v-theme-on-selected-table-header: 255,255,255;
+      --v-theme-on-internal-note-bg: 0,0,0;
+      --v-theme-on-comment-bg: 0,0,0;
+      --v-theme-on-earl-200: 0,0,0;
+      --v-theme-on-earl-300: 0,0,0;
+      --v-theme-on-earl-500: 255,255,255;
+      --v-theme-on-earl-600: 255,255,255;
+      --v-theme-on-earl-700: 255,255,255;
+      --v-theme-on-earl-900: 255,255,255;
+      --v-theme-on-earl-1000: 255,255,255;
+      --v-theme-on-amaizeing-100: 0,0,0;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--darkTheme {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 186,188,189;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 246,247,248;
+      --v-theme-primary: 121,193,215;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 63,81,181;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 246,141,138;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 165,214,228;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 120,255,185;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 255,230,140;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-accent: 33,150,243;
+      --v-theme-accent-overlay-multiplier: 2;
+      --v-theme-anchor: 33,150,243;
+      --v-theme-anchor-overlay-multiplier: 2;
+      --v-theme-brand: 255,216,163;
+      --v-theme-brand-overlay-multiplier: 2;
+      --v-theme-default-btn-color: 242,243,244;
+      --v-theme-default-btn-color-overlay-multiplier: 2;
+      --v-theme-medium-priority: 255,216,163;
+      --v-theme-medium-priority-overlay-multiplier: 2;
+      --v-theme-success-500: 45,185,96;
+      --v-theme-success-500-overlay-multiplier: 2;
+      --v-theme-selected-table-header: 246,247,248;
+      --v-theme-selected-table-header-overlay-multiplier: 2;
+      --v-theme-internal-note-bg: 88,79,51;
+      --v-theme-internal-note-bg-overlay-multiplier: 1;
+      --v-theme-comment-bg: 33,35,36;
+      --v-theme-comment-bg-overlay-multiplier: 1;
+      --v-theme-earl-900: 33,35,36;
+      --v-theme-earl-900-overlay-multiplier: 1;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 0,0,0;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 0,0,0;
+      --v-theme-on-info: 0,0,0;
+      --v-theme-on-success: 0,0,0;
+      --v-theme-on-warning: 0,0,0;
+      --v-theme-on-accent: 255,255,255;
+      --v-theme-on-anchor: 255,255,255;
+      --v-theme-on-brand: 0,0,0;
+      --v-theme-on-default-btn-color: 0,0,0;
+      --v-theme-on-medium-priority: 0,0,0;
+      --v-theme-on-success-500: 255,255,255;
+      --v-theme-on-selected-table-header: 0,0,0;
+      --v-theme-on-internal-note-bg: 255,255,255;
+      --v-theme-on-comment-bg: 255,255,255;
+      --v-theme-on-earl-900: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 33, 37, 41;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .bg-brand {
+      --v-theme-overlay-multiplier: var(--v-theme-brand-overlay-multiplier);
+      background-color: rgb(var(--v-theme-brand)) !important;
+      color: rgb(var(--v-theme-on-brand)) !important;
+    }
+    .bg-default-btn-color {
+      --v-theme-overlay-multiplier: var(--v-theme-default-btn-color-overlay-multiplier);
+      background-color: rgb(var(--v-theme-default-btn-color)) !important;
+      color: rgb(var(--v-theme-on-default-btn-color)) !important;
+    }
+    .bg-medium-priority {
+      --v-theme-overlay-multiplier: var(--v-theme-medium-priority-overlay-multiplier);
+      background-color: rgb(var(--v-theme-medium-priority)) !important;
+      color: rgb(var(--v-theme-on-medium-priority)) !important;
+    }
+    .bg-info-500 {
+      --v-theme-overlay-multiplier: var(--v-theme-info-500-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info-500)) !important;
+      color: rgb(var(--v-theme-on-info-500)) !important;
+    }
+    .bg-success-500 {
+      --v-theme-overlay-multiplier: var(--v-theme-success-500-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success-500)) !important;
+      color: rgb(var(--v-theme-on-success-500)) !important;
+    }
+    .bg-selected-table-header {
+      --v-theme-overlay-multiplier: var(--v-theme-selected-table-header-overlay-multiplier);
+      background-color: rgb(var(--v-theme-selected-table-header)) !important;
+      color: rgb(var(--v-theme-on-selected-table-header)) !important;
+    }
+    .bg-internal-note-bg {
+      --v-theme-overlay-multiplier: var(--v-theme-internal-note-bg-overlay-multiplier);
+      background-color: rgb(var(--v-theme-internal-note-bg)) !important;
+      color: rgb(var(--v-theme-on-internal-note-bg)) !important;
+    }
+    .bg-comment-bg {
+      --v-theme-overlay-multiplier: var(--v-theme-comment-bg-overlay-multiplier);
+      background-color: rgb(var(--v-theme-comment-bg)) !important;
+      color: rgb(var(--v-theme-on-comment-bg)) !important;
+    }
+    .bg-earl-200 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-200-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-200)) !important;
+      color: rgb(var(--v-theme-on-earl-200)) !important;
+    }
+    .bg-earl-300 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-300-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-300)) !important;
+      color: rgb(var(--v-theme-on-earl-300)) !important;
+    }
+    .bg-earl-500 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-500-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-500)) !important;
+      color: rgb(var(--v-theme-on-earl-500)) !important;
+    }
+    .bg-earl-600 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-600-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-600)) !important;
+      color: rgb(var(--v-theme-on-earl-600)) !important;
+    }
+    .bg-earl-700 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-700-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-700)) !important;
+      color: rgb(var(--v-theme-on-earl-700)) !important;
+    }
+    .bg-earl-900 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-900-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-900)) !important;
+      color: rgb(var(--v-theme-on-earl-900)) !important;
+    }
+    .bg-earl-1000 {
+      --v-theme-overlay-multiplier: var(--v-theme-earl-1000-overlay-multiplier);
+      background-color: rgb(var(--v-theme-earl-1000)) !important;
+      color: rgb(var(--v-theme-on-earl-1000)) !important;
+    }
+    .bg-amaizeing-100 {
+      --v-theme-overlay-multiplier: var(--v-theme-amaizeing-100-overlay-multiplier);
+      background-color: rgb(var(--v-theme-amaizeing-100)) !important;
+      color: rgb(var(--v-theme-on-amaizeing-100)) !important;
+    }
+    .bg-accent {
+      --v-theme-overlay-multiplier: var(--v-theme-accent-overlay-multiplier);
+      background-color: rgb(var(--v-theme-accent)) !important;
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+    .bg-anchor {
+      --v-theme-overlay-multiplier: var(--v-theme-anchor-overlay-multiplier);
+      background-color: rgb(var(--v-theme-anchor)) !important;
+      color: rgb(var(--v-theme-on-anchor)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-brand {
+      color: rgb(var(--v-theme-brand)) !important;
+    }
+    .border-brand {
+      --v-border-color: var(--v-theme-brand);
+    }
+    .text-default-btn-color {
+      color: rgb(var(--v-theme-default-btn-color)) !important;
+    }
+    .border-default-btn-color {
+      --v-border-color: var(--v-theme-default-btn-color);
+    }
+    .text-medium-priority {
+      color: rgb(var(--v-theme-medium-priority)) !important;
+    }
+    .border-medium-priority {
+      --v-border-color: var(--v-theme-medium-priority);
+    }
+    .text-info-500 {
+      color: rgb(var(--v-theme-info-500)) !important;
+    }
+    .border-info-500 {
+      --v-border-color: var(--v-theme-info-500);
+    }
+    .text-success-500 {
+      color: rgb(var(--v-theme-success-500)) !important;
+    }
+    .border-success-500 {
+      --v-border-color: var(--v-theme-success-500);
+    }
+    .text-selected-table-header {
+      color: rgb(var(--v-theme-selected-table-header)) !important;
+    }
+    .border-selected-table-header {
+      --v-border-color: var(--v-theme-selected-table-header);
+    }
+    .text-internal-note-bg {
+      color: rgb(var(--v-theme-internal-note-bg)) !important;
+    }
+    .border-internal-note-bg {
+      --v-border-color: var(--v-theme-internal-note-bg);
+    }
+    .text-comment-bg {
+      color: rgb(var(--v-theme-comment-bg)) !important;
+    }
+    .border-comment-bg {
+      --v-border-color: var(--v-theme-comment-bg);
+    }
+    .text-earl-200 {
+      color: rgb(var(--v-theme-earl-200)) !important;
+    }
+    .border-earl-200 {
+      --v-border-color: var(--v-theme-earl-200);
+    }
+    .text-earl-300 {
+      color: rgb(var(--v-theme-earl-300)) !important;
+    }
+    .border-earl-300 {
+      --v-border-color: var(--v-theme-earl-300);
+    }
+    .text-earl-500 {
+      color: rgb(var(--v-theme-earl-500)) !important;
+    }
+    .border-earl-500 {
+      --v-border-color: var(--v-theme-earl-500);
+    }
+    .text-earl-600 {
+      color: rgb(var(--v-theme-earl-600)) !important;
+    }
+    .border-earl-600 {
+      --v-border-color: var(--v-theme-earl-600);
+    }
+    .text-earl-700 {
+      color: rgb(var(--v-theme-earl-700)) !important;
+    }
+    .border-earl-700 {
+      --v-border-color: var(--v-theme-earl-700);
+    }
+    .text-earl-900 {
+      color: rgb(var(--v-theme-earl-900)) !important;
+    }
+    .border-earl-900 {
+      --v-border-color: var(--v-theme-earl-900);
+    }
+    .text-earl-1000 {
+      color: rgb(var(--v-theme-earl-1000)) !important;
+    }
+    .border-earl-1000 {
+      --v-border-color: var(--v-theme-earl-1000);
+    }
+    .text-amaizeing-100 {
+      color: rgb(var(--v-theme-amaizeing-100)) !important;
+    }
+    .border-amaizeing-100 {
+      --v-border-color: var(--v-theme-amaizeing-100);
+    }
+    .on-brand {
+      color: rgb(var(--v-theme-on-brand)) !important;
+    }
+    .on-default-btn-color {
+      color: rgb(var(--v-theme-on-default-btn-color)) !important;
+    }
+    .on-medium-priority {
+      color: rgb(var(--v-theme-on-medium-priority)) !important;
+    }
+    .on-info-500 {
+      color: rgb(var(--v-theme-on-info-500)) !important;
+    }
+    .on-success-500 {
+      color: rgb(var(--v-theme-on-success-500)) !important;
+    }
+    .on-selected-table-header {
+      color: rgb(var(--v-theme-on-selected-table-header)) !important;
+    }
+    .on-internal-note-bg {
+      color: rgb(var(--v-theme-on-internal-note-bg)) !important;
+    }
+    .on-comment-bg {
+      color: rgb(var(--v-theme-on-comment-bg)) !important;
+    }
+    .on-earl-200 {
+      color: rgb(var(--v-theme-on-earl-200)) !important;
+    }
+    .on-earl-300 {
+      color: rgb(var(--v-theme-on-earl-300)) !important;
+    }
+    .on-earl-500 {
+      color: rgb(var(--v-theme-on-earl-500)) !important;
+    }
+    .on-earl-600 {
+      color: rgb(var(--v-theme-on-earl-600)) !important;
+    }
+    .on-earl-700 {
+      color: rgb(var(--v-theme-on-earl-700)) !important;
+    }
+    .on-earl-900 {
+      color: rgb(var(--v-theme-on-earl-900)) !important;
+    }
+    .on-earl-1000 {
+      color: rgb(var(--v-theme-on-earl-1000)) !important;
+    }
+    .on-amaizeing-100 {
+      color: rgb(var(--v-theme-on-amaizeing-100)) !important;
+    }
+    .text-accent {
+      color: rgb(var(--v-theme-accent)) !important;
+    }
+    .border-accent {
+      --v-border-color: var(--v-theme-accent);
+    }
+    .text-anchor {
+      color: rgb(var(--v-theme-anchor)) !important;
+    }
+    .border-anchor {
+      --v-border-color: var(--v-theme-anchor);
+    }
+    .on-accent {
+      color: rgb(var(--v-theme-on-accent)) !important;
+    }
+    .on-anchor {
+      color: rgb(var(--v-theme-on-anchor)) !important;
+    }
+</style></head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTKRL68F"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKTNBB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<div id="portal-vue" grecaptcha-site-key="6LdKJK8ZAAAAAPouGI6FOJepbMiheg-nAz1OF1Tb" portal-settings-id="1157871" portal-service-interruption="false" data-v-app=""><div class="v-application v-theme--lightTheme v-layout v-layout--full-height v-locale--is-ltr tw-bg-earl-100"><div class="v-application__wrap"><nav data-v-417f763d="" class="tw-flex tw-h-16 tw-w-full tw-items-center tw-justify-between tw-bg-white tw-px-4 tw-text-sm"><div data-v-417f763d="" class="tw-flex tw-h-full tw-items-center"><a data-v-417f763d="" class="tw-mr-2 tw-flex tw-h-full tw-cursor-pointer tw-flex-col tw-justify-center tw-text-earl-1000 tw-no-underline hover:tw-opacity-50"><img data-v-417f763d="" src="https://mybrandpackage.com/wp-content/uploads/2022/07/cropped-cropped-MyBrandPackage-icon-light.png" class="tw-mr-4 tw-h-12 tw-rounded-lg lg:tw-mr-16"></a><a data-v-417f763d="" class="tw-flex tw-h-full tw-cursor-pointer tw-flex-col tw-justify-center tw-px-2 tw-font-bold tw-text-earl-1000 hover:tw-opacity-50">
+
+  <a href="dash.html"><span data-v-417f763d="">Home</span></a></div><div data-v-417f763d="" class="tw-flex"><a data-v-417f763d="" href="https://mybrandpackage.on.spiceworks.com/portal/ticket" class=""><button data-v-417f763d="" type="button" class="v-btn v-btn--slim v-theme--lightTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-flat hover:tw-bg-dusk-600 dark:hover:tw-bg-dusk-300" aria-label="Submit a ticket" style="min-width: 0.65rem;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i class="mdi-plus mdi v-icon notranslate v-theme--lightTheme v-icon--size-large tw-text-white dark:tw-text-black" aria-hidden="true"></i><span class="tw-text-base tw-font-medium tw-normal-case tw-tracking-normal tw-mx-1 tw-text-white dark:tw-text-black">Submit a ticket</span></span><!----><!----></button></a><div data-v-417f763d="" class="tw-ml-5 tw-whitespace-nowrap lg:tw-ml-10" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-1"><div data-v-417f763d="" class="v-avatar v-theme--lightTheme bg-blue v-avatar--density-default v-avatar--variant-flat mr-2" style="width: 36px; height: 36px;"><span class="tw-text-white tw-font-medium" style="font-size: 18px;">FL</span><!----><span class="v-avatar__underlay"></span></div><span data-v-417f763d="" class="email">murad@kakeesh.com</span><i data-v-417f763d="" class="mdi-menu-down mdi v-icon notranslate v-theme--lightTheme v-icon--size-default" aria-hidden="true"></i></div><!----></div></nav><div data-v-0cce665d="" class="tw-hidden sm:tw-block"><div data-v-0cce665d="" class="portal-gradient-blue tw-absolute tw-top-16 tw-z-0 tw-h-29 tw-w-full sm:tw-h-58"></div><div data-v-0cce665d="" class="tw-w-full tw-font-roboto tw-leading-6"><div data-v-0cce665d="" class="tw-flex tw-h-20 tw-w-full tw-items-center tw-justify-center sm:tw-h-35"><h2 data-v-0cce665d="" class="tw-z-10 tw-justify-center tw-text-lg tw-font-extrabold tw-text-white sm:tw-text-3xl lg:tw-text-4.5xl">Your digital marketing dashboard.</h2></div></div></div><main class="v-main tw-z-10 tw-text-sm tw-font-medium tw-text-earl-1000" style="--v-layout-left: 0px; --v-layout-right: 0px; --v-layout-top: 0px; --v-layout-bottom: 0px;"><div class="v-container v-locale--is-ltr tw-p-0"><div><section class="tw-w-full"><div class="tw-flex tw-flex-col tw-items-center tw-justify-center sm:tw-flex-row sm:tw-items-start"><div class="tw-mx-4 tw-w-full tw-flex-none tw-border-t tw-bg-white tw-px-4 tw-shadow-portal sm:tw-rounded sm:tw-border sm:tw-p-6 lg:tw-max-w-152 lg:tw-flex-auto"><div data-v-b044f1f0="" class="tw-relative tw-flex tw-w-full tw-flex-col tw-justify-between" style="height: calc(var(--vh, 1vh) * 100 - 253.72727966308594px);"><div data-v-b044f1f0="" class="container-bg tw-z-10 tw-flex tw-w-full tw-flex-row tw-items-center tw-justify-between tw-py-3"><div data-v-b044f1f0="" class="tw-flex tw-items-center"><a data-v-b044f1f0="" href="https://mybrandpackage.on.spiceworks.com/portal/" class="tw-mr-4 tw-cursor-pointer"><i data-v-b044f1f0="" class="mdi-arrow-left mdi v-icon notranslate v-theme--lightTheme v-icon--size-default" aria-hidden="true"></i></a><div data-v-b044f1f0="" class="tw-line-clamp-2 tw-text-lg tw-font-bold"> Landing Page Design for Mini-Course: “Magnetic Messaging”</div></div><div data-v-b044f1f0="" class="lg:tw-hidden"><button data-v-b044f1f0="" type="button" class="v-btn v-btn--icon v-theme--lightTheme text-default-btn-color v-btn--density-comfortable v-btn--size-default v-btn--variant-text" aria-haspopup="menu" aria-expanded="false" aria-owns="v-menu-203"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i class="mdi-dots-vertical mdi v-icon notranslate v-theme--lightTheme v-icon--size-default" aria-hidden="true"></i></span><!----><!----></button><!----></div></div><div data-v-b044f1f0="" class="tw-absolute tw-w-full tw-overflow-y-auto tw-py-14" style="height: calc(var(--vh, 1vh) * 100 - 253.72727966308594px);"><div data-v-7ace023a="" data-v-b044f1f0="" class="ticket-entry tw-mb-2 tw-p-3 tw-text-sm tw-rounded" theme="blue"><div data-v-7ace023a="" class="tw-flex"><div data-v-7ace023a="" class="v-avatar v-theme--lightTheme bg-orange v-avatar--density-default v-avatar--variant-flat mr-4" style="width: 36px; height: 36px;"><span class="tw-text-white tw-font-medium" style="font-size: 18px;">FL</span><!----><span class="v-avatar__underlay"></span></div><div data-v-7ace023a="" class="tw-flex tw-w-full tw-flex-col dark:tw-text-earl-50"><div data-v-7ace023a="" class="tw-flex tw-h-7 tw-items-center tw-justify-between"><div data-v-7ace023a="" class="tw-flex tw-items-center tw-font-bold"><span data-v-7ace023a="" class="tw-max-w-44 tw-truncate lg:tw-max-w-32 dark:tw-text-earl-50 xl:tw-max-w-28 3xl:tw-max-w-48">Firstname Lastname</span><div aria-describedby="v-tooltip-198" class=""><span class="tw-mx-2 tw-text-xs tw-text-earl-600 dark:tw-text-earl-200" aria-label="May 30, 2025 11:44 PM, Fri May 30, 2025 11:44 PM">May 30, 2025 11:44 PM</span></div><!----><!----></div><!----><!----></div><div data-v-7ace023a=""><div data-v-7ace023a="" class="tw-line-clamp-3"><div data-v-7ace023a="" class="tw-mr-2 tw-max-w-70vw tw-whitespace-pre-wrap [overflow-wrap:anywhere] lg:tw-max-w-none [&amp;&gt;a]:tw-underline">Hi My Brand Package Team,
+
+I’m working on a new free mini-course called Magnetic Messaging, designed to help creators quickly clarify their brand message and connect more deeply with their audience. I’d like a one-page website designed to promote and deliver the course, with a focus on clean design, clarity, and strong conversion.
+
+Here’s what I need included:
+
+    Headline: Clarify Your Message. Connect With Your People.
+
+    Subheadline: A free mini-course for creators who want to stand out and speak clearly
+
+    Opt-in section with email capture (connected to ConvertKit)
+
+    3-Part Overview of the Course Modules
+
+    Brief About Jamie section with headshot
+
+    Testimonials or quotes from past clients (I’ll supply 2)
+
+    CTA: “Start the Free Mini-Course”
+
+    Thank You page design with video embed placeholder
+
+Visual Direction:
+
+    Clean, open layout with layered text and soft motion elements
+
+    Colors: Light neutral background, coral and teal accents, black text
+
+    Fonts: Soft modern sans serif, rounded edges preferred
+
+    Vibe: Friendly, bright, and polished
+
+Let me know if you need any extra content, links, or tech details.
+
+Files:
+(Attachments would typically include her photo, testimonials, course outline, and logo. Listed here for context.)</div></div><div data-v-7ace023a="" style="display: none;"><div data-v-7ace023a="" class="tw-inline-flex tw-flex-wrap tw-gap-2"></div></div><button data-v-7ace023a="" class="tw-self-start tw-text-earl-700 tw-underline dark:tw-text-earl-50" aria-hidden="true">Show more</button><!----></div></div></div></div><div data-v-7ace023a="" data-v-b044f1f0="" class="ticket-entry tw-mb-2 tw-p-3 tw-text-sm tw-bg-earl-100 tw-rounded" theme="blue"><div data-v-7ace023a="" class="tw-flex"><div data-v-7ace023a="" class="v-avatar v-theme--lightTheme bg-orange v-avatar--density-default v-avatar--variant-flat mr-4" style="width: 36px; height: 36px;"><span class="tw-text-white tw-font-medium" style="font-size: 18px;">MK</span><!----><span class="v-avatar__underlay"></span></div><div data-v-7ace023a="" class="tw-flex tw-w-full tw-flex-col dark:tw-text-earl-50"><div data-v-7ace023a="" class="tw-flex tw-h-7 tw-items-center tw-justify-between"><div data-v-7ace023a="" class="tw-flex tw-items-center tw-font-bold"><span data-v-7ace023a="" class="tw-max-w-44 tw-truncate lg:tw-max-w-32 dark:tw-text-earl-50 xl:tw-max-w-28 3xl:tw-max-w-48">Murad Kakish</span><div aria-describedby="v-tooltip-205" class=""><span class="tw-mx-2 tw-text-xs tw-text-earl-600 dark:tw-text-earl-200" aria-label="May 30, 2025 11:46 PM, Fri May 30, 2025 11:46 PM">May 30, 2025 11:46 PM</span></div><!----><!----></div><!----><div data-v-7ace023a=""><!----><!----></div></div><div data-v-7ace023a=""><div data-v-7ace023a="" class="tw-line-clamp-3"><div data-v-7ace023a="" class="tw-mr-2 tw-max-w-70vw tw-whitespace-pre-wrap [overflow-wrap:anywhere] lg:tw-max-w-none [&amp;&gt;a]:tw-underline">The first draft of your Magnetic Messaging landing page is ready for review. You can view it at the link below:
+
+View Draft Page
+
+This page was built directly in your WordPress site and follows the structure we discussed:
+
+    Hero section with your headline, subheadline, and call-to-action
+
+    Email opt-in form connected to ConvertKit
+
+    Three-module overview with supporting visuals
+
+    About section with your photo
+
+    Testimonials section
+
+    Final CTA and a custom Thank You page with video placeholder
+
+Let us know if you’d like any changes to layout, copy, visuals, or links. Once we receive your approval, we’ll schedule the page to go live.
+
+Looking forward to your feedback.</div></div><div data-v-7ace023a="" style="display: none;"><div data-v-7ace023a="" class="tw-inline-flex tw-flex-wrap tw-gap-2"></div></div><button data-v-7ace023a="" class="tw-self-start tw-text-earl-700 tw-underline dark:tw-text-earl-50" aria-hidden="true">Show more</button><!----></div></div></div></div><div data-v-7ace023a="" data-v-b044f1f0="" class="ticket-entry tw-mb-2 tw-p-3 tw-text-sm tw-rounded" theme="blue"><div data-v-7ace023a="" class="tw-flex"><div data-v-7ace023a="" class="v-avatar v-theme--lightTheme bg-orange v-avatar--density-default v-avatar--variant-flat mr-4" style="width: 36px; height: 36px;"><span class="tw-text-white tw-font-medium" style="font-size: 18px;">FL</span><!----><span class="v-avatar__underlay"></span></div><div data-v-7ace023a="" class="tw-flex tw-w-full tw-flex-col dark:tw-text-earl-50"><div data-v-7ace023a="" class="tw-flex tw-h-7 tw-items-center tw-justify-between"><div data-v-7ace023a="" class="tw-flex tw-items-center tw-font-bold"><span data-v-7ace023a="" class="tw-max-w-44 tw-truncate lg:tw-max-w-32 dark:tw-text-earl-50 xl:tw-max-w-28 3xl:tw-max-w-48">Firstname Lastname</span><div aria-describedby="v-tooltip-206" class=""><span class="tw-mx-2 tw-text-xs tw-text-earl-600 dark:tw-text-earl-200" aria-label="May 30, 2025 11:46 PM, Fri May 30, 2025 11:46 PM">May 30, 2025 11:46 PM</span></div><!----><!----></div><!----><div data-v-7ace023a=""><!----><!----></div></div><div data-v-7ace023a=""><div data-v-7ace023a="" class="tw-line-clamp-3"><div data-v-7ace023a="" class="tw-mr-2 tw-max-w-70vw tw-whitespace-pre-wrap [overflow-wrap:anywhere] lg:tw-max-w-none [&amp;&gt;a]:tw-underline">Hi Team,
+
+Thanks for sending this over. I just reviewed the draft and I’m really happy with how it turned out.
+
+The layout is clean and easy to follow, the colors feel exactly on brand, and the opt-in section flows naturally. I especially love the way the course modules are laid out—simple but visually engaging.
+
+A couple of very small edits:
+
+    Could we slightly increase the padding around the testimonial section for better spacing on mobile?
+
+    On the Thank You page, please update the placeholder text to say “Your free mini-course is on the way. Check your inbox for access details.”
+
+Other than that, everything looks great. Once those tweaks are in, I’m happy for the page to go live.
+
+Thanks again for your excellent work on this.</div></div><div data-v-7ace023a="" style="display: none;"><div data-v-7ace023a="" class="tw-inline-flex tw-flex-wrap tw-gap-2"></div></div><button data-v-7ace023a="" class="tw-self-start tw-text-earl-700 tw-underline dark:tw-text-earl-50" aria-hidden="true">Show more</button><!----></div></div></div></div><div data-v-7ace023a="" data-v-b044f1f0="" class="ticket-entry tw-mb-2 tw-p-3 tw-text-sm tw-bg-earl-100 tw-rounded" theme="blue"><div data-v-7ace023a="" class="tw-flex"><div data-v-7ace023a="" class="v-avatar v-theme--lightTheme bg-orange v-avatar--density-default v-avatar--variant-flat mr-4" style="width: 36px; height: 36px;"><span class="tw-text-white tw-font-medium" style="font-size: 18px;">MK</span><!----><span class="v-avatar__underlay"></span></div><div data-v-7ace023a="" class="tw-flex tw-w-full tw-flex-col dark:tw-text-earl-50"><div data-v-7ace023a="" class="tw-flex tw-h-7 tw-items-center tw-justify-between"><div data-v-7ace023a="" class="tw-flex tw-items-center tw-font-bold"><span data-v-7ace023a="" class="tw-max-w-44 tw-truncate lg:tw-max-w-32 dark:tw-text-earl-50 xl:tw-max-w-28 3xl:tw-max-w-48">Murad Kakish</span><div aria-describedby="v-tooltip-207" class=""><span class="tw-mx-2 tw-text-xs tw-text-earl-600 dark:tw-text-earl-200" aria-label="May 30, 2025 11:47 PM, Fri May 30, 2025 11:47 PM">May 30, 2025 11:47 PM</span></div><!----><!----></div><!----><div data-v-7ace023a=""><!----><!----></div></div><div data-v-7ace023a=""><div data-v-7ace023a="" class="tw-line-clamp-3"><div data-v-7ace023a="" class="tw-mr-2 tw-max-w-70vw tw-whitespace-pre-wrap [overflow-wrap:anywhere] lg:tw-max-w-none [&amp;&gt;a]:tw-underline">Thanks for the quick review and helpful notes.
+
+We’ve made the final adjustments:
+
+    Increased the padding around the testimonial section for better mobile spacing
+
+    Updated the Thank You page message to read: “Your free mini-course is on the way. Check your inbox for access details.”
+
+The updates are now live on the draft page. Feel free to give it one last look here:
+View Final Draft
+
+If everything looks good to you, we’ll move forward with publishing the page.
+
+Let us know if you need anything else before we push it live.</div></div><div data-v-7ace023a="" style="display: none;"><div data-v-7ace023a="" class="tw-inline-flex tw-flex-wrap tw-gap-2"></div></div><button data-v-7ace023a="" class="tw-self-start tw-text-earl-700 tw-underline dark:tw-text-earl-50" aria-hidden="true">Show more</button><!----></div></div></div></div><div data-v-7ace023a="" data-v-b044f1f0="" class="ticket-entry tw-mb-2 tw-p-3 tw-text-sm tw-rounded" theme="blue"><div data-v-7ace023a="" class="tw-flex"><div data-v-7ace023a="" class="v-avatar v-theme--lightTheme bg-orange v-avatar--density-default v-avatar--variant-flat mr-4" style="width: 36px; height: 36px;"><span class="tw-text-white tw-font-medium" style="font-size: 18px;">FL</span><!----><span class="v-avatar__underlay"></span></div><div data-v-7ace023a="" class="tw-flex tw-w-full tw-flex-col dark:tw-text-earl-50"><div data-v-7ace023a="" class="tw-flex tw-h-7 tw-items-center tw-justify-between"><div data-v-7ace023a="" class="tw-flex tw-items-center tw-font-bold"><span data-v-7ace023a="" class="tw-max-w-44 tw-truncate lg:tw-max-w-32 dark:tw-text-earl-50 xl:tw-max-w-28 3xl:tw-max-w-48">Firstname Lastname</span><div aria-describedby="v-tooltip-208" class=""><span class="tw-mx-2 tw-text-xs tw-text-earl-600 dark:tw-text-earl-200" aria-label="May 30, 2025 11:47 PM, Fri May 30, 2025 11:47 PM">May 30, 2025 11:47 PM</span></div><!----><!----></div><!----><div data-v-7ace023a=""><!----><!----></div></div><div data-v-7ace023a=""><div data-v-7ace023a="" class="tw-line-clamp-3"><div data-v-7ace023a="" class="tw-mr-2 tw-max-w-70vw tw-whitespace-pre-wrap [overflow-wrap:anywhere] lg:tw-max-w-none [&amp;&gt;a]:tw-underline">Hi Team,
+
+Just reviewed the final draft and everything looks perfect. The spacing adjustments make a big difference on mobile and the updated Thank You message is spot on.
+
+You’re all set to publish the page.
+
+Thanks again for your thoughtful work on this project. It’s been such a smooth process and I really appreciate the care you put into every detail.
+
+Looking forward to the next one.</div></div><div data-v-7ace023a="" style="display: none;"><div data-v-7ace023a="" class="tw-inline-flex tw-flex-wrap tw-gap-2"></div></div><button data-v-7ace023a="" class="tw-self-start tw-text-earl-700 tw-underline dark:tw-text-earl-50" aria-hidden="true">Show more</button><!----></div></div></div></div><div data-v-7ace023a="" data-v-b044f1f0="" class="ticket-entry tw-mb-2 tw-p-3 tw-text-sm tw-bg-earl-100 tw-rounded" theme="blue"><div data-v-7ace023a="" class="tw-flex"><div data-v-7ace023a="" class="v-avatar v-theme--lightTheme bg-orange v-avatar--density-default v-avatar--variant-flat mr-4" style="width: 36px; height: 36px;"><div class="v-responsive v-img v-img--booting" aria-label="hello@mybrandpackage.com" role="img"><div class="v-responsive__sizer"></div><!----><!----><!----><!----><!----><!----></div><!----><span class="v-avatar__underlay"></span></div><div data-v-7ace023a="" class="tw-flex tw-w-full tw-flex-col dark:tw-text-earl-50"><div data-v-7ace023a="" class="tw-flex tw-h-7 tw-items-center tw-justify-between"><div data-v-7ace023a="" class="tw-flex tw-items-center tw-font-bold"><span data-v-7ace023a="" class="tw-max-w-44 tw-truncate lg:tw-max-w-32 dark:tw-text-earl-50 xl:tw-max-w-28 3xl:tw-max-w-48">Murad Kakish</span><div aria-describedby="v-tooltip-209" class=""><span class="tw-mx-2 tw-text-xs tw-text-earl-600 dark:tw-text-earl-200" aria-label="May 30, 2025 11:47 PM, Fri May 30, 2025 11:47 PM">May 30, 2025 11:47 PM</span></div><!----><!----></div><!----><div data-v-7ace023a=""><!----><!----></div></div><div data-v-7ace023a=""><div data-v-7ace023a="" class="tw-line-clamp-3"><div data-v-7ace023a="" class="tw-mr-2 tw-max-w-70vw tw-whitespace-pre-wrap [overflow-wrap:anywhere] lg:tw-max-w-none [&amp;&gt;a]:tw-underline">Glad to hear your request has been taken care of.
+
+I'll go ahead and close this ticket. You can always find your previous tickets on your dashboard at <a href="https://mybrandpackage.com/portal" rel="noopener noreferrer" target="_blank">mybrandpackage.com/portal</a></div></div><div data-v-7ace023a="" style="display: none;"><div data-v-7ace023a="" class="tw-inline-flex tw-flex-wrap tw-gap-2"></div></div><button data-v-7ace023a="" class="tw-self-start tw-text-earl-700 tw-underline dark:tw-text-earl-50" aria-hidden="true">Show more</button><!----></div></div></div></div></div><div data-v-b044f1f0="" class="container-bg tw-z-10 tw-w-full tw-overflow-auto tw-py-3"><form data-v-b044f1f0="" class="v-form tw-flex tw-flex-row tw-items-end" novalidate=""><div data-v-b044f1f0="" class="v-input v-input--horizontal v-input--center-affix v-input--density-compact v-theme--lightTheme v-locale--is-ltr v-textarea v-text-field v-textarea--auto-grow v-textarea--no-resize"><!----><div class="v-input__control"><div class="v-field v-field--center-affix v-field--has-background v-field--no-label v-field--variant-outlined v-theme--lightTheme bg-white v-locale--is-ltr" style="--v-textarea-control-height: 40px;"><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--lightTheme v-locale--is-ltr" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100" style="top: 0px; height: 0px; --v-progress-linear-height: 2px;"><!----><div class="v-progress-linear__background bg-primary"></div><div class="v-progress-linear__buffer bg-primary" style="width: 0%;"></div><div class="v-progress-linear__indeterminate"><div class="v-progress-linear__indeterminate long bg-primary"></div><div class="v-progress-linear__indeterminate short bg-primary"></div></div><!----></div></div><!----><div class="v-field__field" data-no-activator=""><!----><label class="v-label v-field-label" for="input-199"><!----><!----></label><!----><textarea class="v-field__input" placeholder="Type a response or question" rows="1" id="input-199" aria-describedby="input-199-messages"></textarea><textarea class="v-field__input v-textarea__sizer" id="input-199-sizer" readonly="" aria-hidden="true"></textarea><!----></div><!----><!----><div class="v-field__outline"><div class="v-field__outline__start"></div><!----><div class="v-field__outline__end"></div><!----></div></div></div><!----><div class="v-input__details"><div class="v-messages" role="alert" aria-live="polite" id="input-199-messages"></div><!----></div></div><button data-v-b044f1f0="" type="submit" class="v-btn v-btn--disabled v-btn--slim v-theme--lightTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-flat hover:tw-bg-dusk-600 dark:hover:tw-bg-dusk-300 tw-mb-1.5 tw-ml-2" disabled="" aria-label="Send" style="min-height: 2.5rem; min-width: 4rem;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><i class="mdi-send mdi v-icon notranslate v-theme--lightTheme v-icon--size-default tw-text-white dark:tw-text-black" aria-hidden="true"></i><span class="tw-text-base tw-font-medium tw-normal-case tw-tracking-normal tw-mx-1 tw-hidden lg:tw-block tw-text-white dark:tw-text-black">Send</span></span><!----><!----></button></form></div></div></div><div class="tw-mx-4 tw-hidden tw-w-80 tw-flex-none lg:tw-block"><div data-v-08960639="" class="tw-w-full tw-rounded tw-border tw-bg-white tw-p-4 tw-shadow-portal sm:tw-p-6"><div data-v-08960639="" class="tw-mb-5 tw-flex tw-w-full tw-flex-row tw-items-center tw-justify-between"><div data-v-08960639="" class="tw-text-xl tw-font-bold">Ticket Details</div><button data-v-08960639="" type="submit" class="v-btn v-btn--slim v-theme--lightTheme bg-primary v-btn--density-default v-btn--size-default v-btn--variant-flat hover:tw-bg-dusk-600 dark:hover:tw-bg-dusk-300" aria-label="Reopen ticket" style="min-width: 0.65rem;"><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!----><span class="v-btn__content" data-no-activator=""><!----><span class="tw-text-base tw-font-medium tw-normal-case tw-tracking-normal tw-mx-1 tw-text-white dark:tw-text-black">Reopen ticket</span></span><!----><!----></button></div><table data-v-08960639="" class="tw-flex tw-flex-col"><tr data-v-08960639=""><td data-v-08960639="" class="ticket-property-title">Assignee</td></tr><tr data-v-08960639="" class="tw-mb-3"><td data-v-08960639="" class="tw-break-normal tw-capitalize">Admin My Brand Package</td></tr><tr data-v-08960639=""><td data-v-08960639="" class="ticket-property-title">Category</td></tr><tr data-v-08960639="" class="tw-mb-3"><td data-v-08960639="" class="tw-break-normal tw-capitalize">Web Design</td></tr><tr data-v-08960639=""><td data-v-08960639="" class="ticket-property-title">Status</td></tr><tr data-v-08960639="" class="tw-mb-3"><td data-v-08960639="" class="tw-break-normal tw-capitalize">closed</td></tr><tr data-v-08960639=""><td data-v-08960639="" class="ticket-property-title">Created</td></tr><tr data-v-08960639="" class="tw-mb-3"><td data-v-08960639="" class="tw-break-normal">May 31, 2025</td></tr></table><div data-v-6b209a05="" data-v-08960639="" class="text-center"><!----><!----></div></div></div></div></section></div></div></main><div class="tw-hidden lg:tw-block"><footer class="tw-m-4 tw-flex tw-flex-col tw-justify-center tw-text-xs tw-leading-4.5 tw-text-earl-600"><div class="tw-text-center"> This help desk is powered by <a href="https://www.spiceworks.com/free-help-desk-software/" class="tw-cursor-pointer tw-text-earl-600 tw-underline">Spiceworks</a> to track issues and get all your requests sorted in a snap. </div><span class="tw-text-center"><a href="https://www.spiceworks.com/privacy/" class="tw-mx-0.5 tw-cursor-pointer tw-text-earl-600 tw-underline">Privacy Policy</a> · <a href="https://www.ziffdavis.com/terms-of-use/" class="tw-mx-0.5 tw-cursor-pointer tw-text-earl-600 tw-underline">Terms of Use</a> · <a href="https://www.spiceworks.com/privacy/cookies/" class="tw-mx-0.5 tw-cursor-pointer tw-text-earl-600 tw-underline">Cookie Policy</a> · <a href="https://www.spiceworks.com/accessibility-statement/" class="tw-mx-0.5 tw-cursor-pointer tw-text-earl-600 tw-underline">Accessibility Statement</a> · <a href="https://dsar.spiceworks.com/" class="tw-mx-0.5 tw-cursor-pointer tw-text-earl-600 tw-underline">Do Not Sell My Personal Information</a> · © Copyright 2006 - 2025 Spiceworks Inc. </span></footer></div><!----><!----></div></div></div>
+
+
+
+<div class="v-overlay-container"><div class="v-overlay v-overlay--absolute v-theme--lightTheme v-locale--is-ltr v-tooltip print:tw-hidden" id="v-tooltip-198" role="tooltip" style="z-index: 50;"><!----><div class="v-overlay__content" target="[object HTMLDivElement]" style="min-width: 0px; display: none;"><span>Fri May 30, 2025 11:44 PM</span></div></div><div class="v-overlay v-overlay--absolute v-theme--lightTheme v-locale--is-ltr v-tooltip print:tw-hidden" id="v-tooltip-205" role="tooltip" style="z-index: 50;"><!----><div class="v-overlay__content" target="[object HTMLDivElement]" style="min-width: 0px; display: none;"><span>Fri May 30, 2025 11:46 PM</span></div></div><div class="v-overlay v-overlay--absolute v-theme--lightTheme v-locale--is-ltr v-tooltip print:tw-hidden" id="v-tooltip-206" role="tooltip" style="z-index: 50;"><!----><div class="v-overlay__content" target="[object HTMLDivElement]" style="min-width: 0px; display: none;"><span>Fri May 30, 2025 11:46 PM</span></div></div><div class="v-overlay v-overlay--absolute v-theme--lightTheme v-locale--is-ltr v-tooltip print:tw-hidden" id="v-tooltip-207" role="tooltip" style="z-index: 50;"><!----><div class="v-overlay__content" target="[object HTMLDivElement]" style="min-width: 0px; display: none;"><span>Fri May 30, 2025 11:47 PM</span></div></div><div class="v-overlay v-overlay--absolute v-theme--lightTheme v-locale--is-ltr v-tooltip print:tw-hidden" id="v-tooltip-208" role="tooltip" style="z-index: 50;"><!----><div class="v-overlay__content" target="[object HTMLDivElement]" style="min-width: 0px; display: none;"><span>Fri May 30, 2025 11:47 PM</span></div></div><div class="v-overlay v-overlay--absolute v-theme--lightTheme v-locale--is-ltr v-tooltip print:tw-hidden" id="v-tooltip-209" role="tooltip" style="z-index: 50;"><!----><div class="v-overlay__content" target="[object HTMLDivElement]" style="min-width: 0px; display: none;"><span>Fri May 30, 2025 11:47 PM</span></div></div></div></body></html>
